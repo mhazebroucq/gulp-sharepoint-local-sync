@@ -1,6 +1,6 @@
 {
   "name": "gulp-sharepoint-local-sync",
-  "version": "1.0.7",
+  "version": "1.0.11",
   "main": "index.js",
   "author": "mhazebroucq",
   "description": "",

@@ -7,8 +7,7 @@ sp = require('gulp-spsync-creds'),
 confirm = require('gulp-confirm'),
 clean = require('gulp-clean'),
 settings = require('./settings');
-var processIfModified = require('gulp-process-if-modified');
-const debug = require('gulp-debug');
+var processIfModified = require('gulp-process-only-modified-files');
 
 
 var onError = function (err) {
