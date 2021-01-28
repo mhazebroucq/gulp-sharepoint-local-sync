@@ -18,37 +18,48 @@ You can install in into an existing project bu using procedure below.
 If you clone the repo, do not follow the below procedure :
 
 ## Step 0
-Install node.js :)
+Create a folder to store your solution.
 
 ## Step 1
-
-npm init
+Install gulp-sharepoint-local-sync npm package
+```javascript
+npm i gulp-sharepoint-local-sync
+```
 
 ## Step 2
-Open package.json, after description, add "," then paste
+Open et update config.js file.  
+This file allow you to define many profiles and select the one you want to activate by exporting the wanted config name.
 ```javascript
-"dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-plumber": "^1.1.0",
-    "gulp-process-only-modified-files": "^1.0.0",
-    "node-file-cache": "^1.0.2",
-    "gulp-spsync-creds": "^2.3.8",
-    "sp2013sync": "^1.0.5"
-  },
+module.exports = {
+    dev: {        
+        "site": "http://test-site-url", // full ulr of the SharePoint on-premises site
+        "skipInstall": false,
+        "verbose": "false",
+        "config":"Dev",
+        "remoteFoldersToGet":["SiteAssets","_catalogs/masterpage"],// folders for which you want to retrieve content in the populate task
+        "location":"src"// location where files will be downloaded, uploaded and watched
+    },
+    preprod: {        
+        "site": "http://preprod-site-url", // full ulr of the SharePoint on-premises site
+        "skipInstall": false,
+        "verbose": "false",
+        "config":"Preprod",
+        "remoteFoldersToGet":["SiteAssets","_catalogs/masterpage"],// folders for which you want to retrieve content in the populate task
+        "location":"src"// location where files will be downloaded, uploaded and watched
+    },
+    prod: {        
+        "site": "http://prod-site-url", // full ulr of the SharePoint on-premises site
+        "skipInstall": false,
+        "verbose": "false",
+        "config":"Prod",
+        "remoteFoldersToGet":["SiteAssets","_catalogs/masterpage"],  // folders for which you want to retrieve content in the populate task
+        "location":"src" // location where files will be downloaded, uploaded and watched
+    }
+}.dev;
 ```
 
-## Step 4
-Install dependencies
-```bash
-npm install --save
-```
-
-## Step 5
-Copy the files config.js, gulpfile.js and settings.js into your solution folder.
-
-## Step 6
-Create a creds.js file int the folder parent of your solution folder .
+## Step 2
+Create a creds.js file in the parent folder.  
 This file is outside of the solution folder to avoid to upload it to git.
 
 ```javascript
@@ -59,18 +70,6 @@ module.exports = {
     }
 }.dev;
 ```
-
-## Step 7
-Configure config.json
-```javascript
-    "site": "http://test-site-url",
-    "skipInstall": false,
-    "verbose": "false",
-    "config":"Dev",
-    "remoteFoldersToGet":["SiteAssets","_catalogs/masterpage"], //folders for which you want to retrieve content in the populate task
-    "location":"src" //location where files will be downloaded, uploaded and watched
-```
-This file allows you to configure many profiles and select the one you want to activate by exporting the wanted config name.
 
 # Usage
 

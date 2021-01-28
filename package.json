@@ -1,11 +1,11 @@
 {
   "name": "gulp-sharepoint-local-sync",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "main": "index.js",
   "author": "mhazebroucq",
   "description": "",
   "scripts": {
-    "postinstall": "node postinstall.js"
+    "postinstall": "node ./postinstall.js"
   },
   "dependencies": {
     "gulp": "^3.9.1",
@@ -18,11 +18,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhazebroucq/gulp-sharepoint-local-sync.git"
+    "url": "git+https://github.com/mhazebroucq/gulp-sharepoint-local-sync"
   },
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mhazebroucq/gulp-sharepoint-local-sync/issues"
-  },
   "homepage": "https://github.com/mhazebroucq/gulp-sharepoint-local-sync3#readme"
 }
