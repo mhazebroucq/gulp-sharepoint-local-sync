@@ -75,23 +75,17 @@ module.exports = {
 
 * A) Push the files to SharePoint immediately. It will need a confirm and then it will create the folder by it self.  
 Only the updated files since last push will be pushed. If it is the first push, all files will be pushed.  
- (if you change the option published to false in config.json, the default gulp task will not publish files)
 ```bash
 gulp 
 ```
 * B) Watch changes and push immediately each file you update
 ```bash
 gulp watch
-```
-* C) Same as A) with publish (if you change the option published to false in config.json, the default gulp task will not publish files)
-```bash
-gulp publish
-```    
-* D) Publish all files to SharePoint regardless of the modification dates
+* C) Publish all files to SharePoint regardless of the modification dates
 ```bash
 gulp publish-all
 ```    
-* E) If you want to retrieve all items from the folders defined in "remoteFoldersToGet" :
+* D) If you want to retrieve all items from the folders defined in "remoteFoldersToGet" :
 ```bash
 gulp populate
 ```
